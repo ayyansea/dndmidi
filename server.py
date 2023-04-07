@@ -1,5 +1,6 @@
 import zmq
 import yaml
+
 from pydub import AudioSegment
 from pydub.playback import play
 
@@ -17,8 +18,8 @@ settings = load_config()
 print(settings)
 
 while True:
-    message = socket.recv().decode()
-    if message == "play":
+    message = socket.recv().decode().split(' ')
+    if message[0] == "play":
         sound = AudioSegment.from_file("test.wav", format="wav")
-        socket.send(b"Sound is playing.")
+        socket.send(f"[{message[1]}] Sound is playing.".encode())
         play(sound)
