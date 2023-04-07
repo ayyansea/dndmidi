@@ -1,0 +1,4 @@
+sounddir: "~/.config/dndmidi/sounds"
+scenes:
+  - one
+  - two

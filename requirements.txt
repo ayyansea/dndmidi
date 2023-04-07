@@ -1,2 +1,5 @@
 keyboard==0.13.5
 mido==1.2.10
+pydub==0.25.1
+PyYAML==6.0
+pyzmq==25.0.2
